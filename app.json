@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/history/history",
+    "pages/personal/personal",
+    "pages/main/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
