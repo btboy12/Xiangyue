@@ -1,10 +1,18 @@
 <!--pages/history/notice/index.wxml-->
 <i-cell-group>
   <i-cell wx:for="{{notice}}" title="{{item.text}}" wx:key="text">
-    <i-avatar slot="icon"></i-avatar>
+    <i-avatar bind:tap="showInfo" slot="icon"></i-avatar>
     <view wx:if="{{item.needConfirm}}" class="check" slot="footer">
       <i-icon type="right" size="28" color="#80848f" />
       <i-icon type="close" size="28" color="#80848f" />
     </view>
   </i-cell>
 </i-cell-group>
+
+<view id="mask" wx:if="{{mask}}" bind:tap="hideInfo">
+  <view id="userInfo">
+    <i-avatar></i-avatar>
+    <text>用户名:{{}}</text>
+    <tag-item></tag-item>
+  </view>
+</view>

@@ -14,7 +14,7 @@ Page({
       text: "xx接受了你的申请爱搜打哈搜哈山东我很大山东",
       needConfirm: false
     }],
-    mask:false
+    mask: false
   },
 
   /**
@@ -71,5 +71,17 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  showInfo(info) {
+    this.setData({
+      mask: true
+    });
+  },
+
+  hideInfo() {
+    this.setData({
+      mask: false
+    });
   }
 })

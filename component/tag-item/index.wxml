@@ -1,2 +1,2 @@
 <!--component/tag-item/index.wxml-->
-<view bind:tap="onTap" class="tag-item">{{title}}</view>
+<view bind:tap="onTap" style='background-color:{{color}}' class="tag-item">{{title}}</view>

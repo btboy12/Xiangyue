@@ -17,8 +17,7 @@ page {
 
 .mask-content {
   position: absolute;
-  width: 60%;
-  height: 60%;
+  padding: 20%;
   overflow-y: auto;
   display: flex;
   flex-direction: row;
@@ -28,8 +27,4 @@ page {
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-.mask-item {
-  margin: 15rpx;
 }

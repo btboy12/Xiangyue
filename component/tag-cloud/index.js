@@ -6,15 +6,22 @@ Component({
   properties: {
     tagList: {
       type: "Array"
+    },
+    show: {
+      type: "Bool",
+      value: false,
+      observer(v) {
+        this.setData({
+          show: v
+        });
+      }
     }
   },
 
   /**
    * 组件的初始数据
    */
-  data: {
-    show: true
-  },
+  data: {},
 
   /**
    * 组件的方法列表
@@ -24,6 +31,9 @@ Component({
       this.setData({
         show: false
       });
+    },
+    selectTag(tag) {
+      this.triggerEvent('select', tag.detail);
     }
   }
 })

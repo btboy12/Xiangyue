@@ -6,7 +6,7 @@ page {
 
 #container {
   width: 90%;
-  height: 80%;
+  height: 75%;
   border: 1px solid #999;
   border-radius: 60rpx;
   position: fixed;
@@ -36,11 +36,32 @@ page {
 }
 
 #title {
-  padding: 90rpx;
+  padding: 75rpx;
   text-align: center;
-  font-size: 60rpx;
+  font-size: 52rpx;
+  color: #333;
 }
 
 #tag {
   text-align: center;
+}
+
+#comment>input {
+  border: 1px solid #333;
+  width: 95%;
+  margin: 55rpx auto;
+}
+
+.comment-placeholder {
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+#confirm {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 24rpx;
 }

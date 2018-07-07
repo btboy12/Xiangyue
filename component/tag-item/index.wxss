@@ -1,8 +1,10 @@
 /* component/tag-item/index.wxss */
 
 .tag-item {
-  border: 1rpx solid #000;
   border-radius: 18rpx;
   display: inline-block;
-  padding: 12rpx;
+  padding: 32rpx 48rpx;
+  color: #333;
+  font-size: 32rpx;
+  margin: 15rpx;
 }
