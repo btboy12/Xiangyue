@@ -1,6 +1,6 @@
 <!--pages/history/notice/index.wxml-->
 <i-cell-group>
-  <i-cell wx:for="{{notice}}" title="{{item.text}}" wx:index="text">
+  <i-cell wx:for="{{notice}}" title="{{item.text}}" wx:key="text">
     <i-avatar slot="icon"></i-avatar>
     <view wx:if="{{item.needConfirm}}" class="check" slot="footer">
       <i-icon type="right" size="28" color="#80848f" />
@@ -8,5 +8,3 @@
     </view>
   </i-cell>
 </i-cell-group>
-
-<view  wx:if="{{mask}}" id="mask"></view>

@@ -1,2 +1,19 @@
 <!--pages/history/notice/dateEnd/index.wxml-->
-<text>pages/history/notice/dateEnd/index.wxml</text>
+<view id="container">
+  <view id="avatar">
+    <view>
+      <image src="http://localhost:30000/avatar.jpg"></image>
+    </view>
+  </view>
+
+  <view id="title">约会结束啦!</view>
+
+  <view id="tag">
+    <tag-item bind:tap="tapTag" title="牛逼"></tag-item>
+  </view>
+
+  <view id="comment">
+  </view>
+</view>
+
+<tag-cloud tagList="{{tagList}}"></tag-cloud>
