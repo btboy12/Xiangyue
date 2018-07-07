@@ -1,4 +1,4 @@
-// pages/history/history.js
+// pages/history/message/index.js
 Page({
 
   /**
