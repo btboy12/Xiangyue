@@ -1,1 +1,10 @@
-{}
+{
+  "usingComponents": {
+    "foot-nav": "/component/foot-nav/index",
+    "i-cell-group": "/iview/cell-group/index",
+    "i-cell": "/iview/cell/index",
+    "i-avatar": "/iview/avatar/index",
+    "i-icon": "/iview/icon/index"
+  },
+  "disableScroll": true
+}

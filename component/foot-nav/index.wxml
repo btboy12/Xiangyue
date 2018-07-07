@@ -1,4 +1,5 @@
 <!--foot_nav.wxml-->
+<view class="placehold"></view>
 <view class="foot-nav">
   <i-row>
     <i-col span="8" i-class="col-class"><navigator url="/pages/history/main/index">时光机</navigator></i-col>
