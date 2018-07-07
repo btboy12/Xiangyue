@@ -1,2 +1,15 @@
 <!--pages/history/message/index.wxml-->
-<text>pages/history/message/index.wxml</text>
+<view id="chat">
+  <view wx:for="{{message}}" wx:index="message" class="{{item.send?'send':'receive'}}">
+    <text class="chat-bubble">{{item.text}}</text>
+  </view>
+</view>
+<view class="placehold"></view>
+<i-row i-class="typein">
+  <i-col span="18">
+    <i-input type="text" mode="wrapped" />
+  </i-col>
+  <i-col span="6">
+    <i-button type="success">发送</i-button>
+  </i-col>
+</i-row>

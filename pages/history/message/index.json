@@ -1,1 +1,8 @@
-{}
+{
+  "usingComponents": {
+    "i-row": "/iview/row/index",
+    "i-col": "/iview/col/index",
+    "i-input": "/iview/input/index",
+    "i-button": "/iview/button/index"
+  }
+}
