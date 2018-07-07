@@ -1,0 +1,6 @@
+<view class='choice'>
+  <view>
+    <image src='{{picsrc}}'></image>
+    <text>{{activityword}}</text>
+  </view>
+</view>
