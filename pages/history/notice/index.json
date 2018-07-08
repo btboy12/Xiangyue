@@ -4,6 +4,6 @@
     "i-cell": "/iview/cell/index",
     "i-avatar": "/iview/avatar/index",
     "i-icon": "/iview/icon/index",
-    "tag-item": "/component/tag-item/index"
+    "user-info": "/component/user-info/index"
   }
 }
