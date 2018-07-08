@@ -1,0 +1,22 @@
+/* pages/history/notice/index.wxss */
+
+page {
+  height: 100%;
+}
+
+#mask {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+
+#userInfo {
+  border-radius: 30rpx;
+  border: 1rpx solid #333;
+  background-color: white;
+  width: 90%;
+  height: 60%;
+}

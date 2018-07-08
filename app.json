@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/history/history",
+    "pages/history/main/index",
+    "pages/history/message/index",
+    "pages/history/notice/index",
+    "pages/history/notice/dateEnd/index",
     "pages/personal/personal"
   ],
   "window": {

@@ -16,3 +16,7 @@
   border-left: solid 1px white;
   color: white;
 }
+
+.placehold {
+  height: 80rpx;
+}

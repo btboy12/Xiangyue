@@ -1,0 +1,6 @@
+<!--component/tag-cloud/index.wxml-->
+<view wx:if="{{show}}" class="mask" bind:tap="hideMask">
+  <view class="mask-content">
+    <tag-item bind:click="selectTag" class="mask-item" wx:for="{{tagList}}" wx:key="*this" title="{{item}}"></tag-item>
+  </view>
+</view>

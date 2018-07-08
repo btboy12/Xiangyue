@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-avatar": "/iview/avatar/index",
+    "tag-item": "/component/tag-item/index",
+    "tag-cloud": "/component/tag-cloud/index"
+  }
+}

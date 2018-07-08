@@ -1,0 +1,23 @@
+<!--pages/history/notice/dateEnd/index.wxml-->
+<view id="container">
+  <view id="avatar">
+    <view>
+      <image src="http://localhost:30000/avatar.jpg"></image>
+    </view>
+  </view>
+
+  <view id="title">约会结束啦!</view>
+
+  <view id="tag">
+    <tag-item wx:for="{{tags}}" wx:key="*this" bind:tap="tapTag" title="{{item}}"></tag-item>
+    <tag-item wx:if="{{tags.length <3}}" bind:tap="tapTag" title="添加标签" color="#eee"></tag-item>
+  </view>
+
+  <view id="comment">
+    <input placeholder='说点什么吧……(0/12)' placeholder-class='comment-placeholder'></input>
+  </view>
+
+  <view id="confirm">好了</view>
+</view>
+
+<tag-cloud bind:select="selectTag" tagList="{{tagList}}" show="{{showTagCloud}}"></tag-cloud>

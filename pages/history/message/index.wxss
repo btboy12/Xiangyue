@@ -1,0 +1,34 @@
+/* pages/history/message/index.wxss */
+
+.chat-bubble {
+  border-radius: 20rpx;
+  padding: 20rpx;
+  display: inline-block;
+}
+
+.receive .chat-bubble {
+  border: solid #999 1rpx;
+  background-color: white;
+  margin: 15rpx 80rpx 15rpx 20rpx;
+}
+
+.send {
+  text-align: right;
+}
+
+.send .chat-bubble {
+  border: solid #eee 1rpx;
+  background-color: greenyellow;
+  margin: 15rpx 20rpx 15rpx 80rpx;
+}
+
+.placehold {
+  height: 65px;
+}
+
+.typein {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: grey;
+}

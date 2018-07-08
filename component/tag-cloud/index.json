@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tag-item":"/component/tag-item/index"
+  }
+}

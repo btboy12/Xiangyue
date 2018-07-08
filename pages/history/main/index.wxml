@@ -1,0 +1,28 @@
+<!--pages/history/main/index.wxml-->
+<view id="container">
+  <view id="title">
+    <image src="http://localhost:30000/history_title.jpg"></image>
+    <view id="toolbox">
+      <view>
+        <navigator url="/pages/history/message/index">
+          <i-icon type="message" size="45" color="#80848f" />
+          <view>消息</view>
+        </navigator>
+        <navigator url="/pages/history/notice/index">
+          <i-icon type="prompt" size="45" color="#80848f" />
+          <view>通知</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view id="comment">
+    <view>
+      <i-cell-group>
+        <i-cell wx:for="{{message}}" wx:key="*this" title="{{item}}">
+          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small" slot="footer"></i-avatar>
+        </i-cell>
+      </i-cell-group>
+    </view>
+  </view>
+  <foot-nav></foot-nav>
+</view>
