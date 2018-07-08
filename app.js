@@ -34,9 +34,9 @@ App({
     })
   },
   onShow: function() {
-    wx.navigateTo({
-      url: "/pages/history/notice/dateEnd/index"
-    });
+    // wx.navigateTo({
+    //   url: "/pages/history/notice/dateEnd/index"
+    // });
   },
   globalData: {
     userInfo: null

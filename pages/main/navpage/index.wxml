@@ -1,0 +1,11 @@
+<!--pages/main/main.wxml-->
+<view>
+  <navigator url='../createactivity/index'>
+    <choice-st activityword='发起活动' picsrc='../../utils/image/createActi.png'></choice-st>
+  </navigator>
+  <navigator url='../createactivity/index'>
+    <choice-st activityword='参加活动' picsrc='../../utils/image/joinActi.png'></choice-st>
+  </navigator>
+</view>
+<foot-nav></foot-nav>
+

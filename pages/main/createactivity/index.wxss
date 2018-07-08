@@ -1,12 +1,13 @@
-/* pages/main/main.wxss */
-.ariseActive{
+.ariseActive,.createsuccess{
   position: fixed;
   left: 5%;
   top:3%;
   width: 80%;
-  height: 800rpx;
+   height: 800rpx; 
   background-color: white;
+  border: solid silver
 }
+
 .select{
   width: 60%;
   overflow: hidden;
@@ -23,5 +24,8 @@
   font-size: 40rpx;
 }
 .pickdate{
+  border: solid;
+}
+.backhistory{
   border: solid;
 }
