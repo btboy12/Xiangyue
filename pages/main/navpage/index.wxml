@@ -3,7 +3,7 @@
   <navigator url='../createactivity/index'>
     <choice-st activityword='发起活动' picsrc='../../utils/image/createActi.png'></choice-st>
   </navigator>
-  <navigator url='../createactivity/index'>
+  <navigator url='../joinactivity/index'>
     <choice-st activityword='参加活动' picsrc='../../utils/image/joinActi.png'></choice-st>
   </navigator>
 </view>
