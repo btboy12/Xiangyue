@@ -78,10 +78,4 @@ Page({
       mask: true
     });
   },
-
-  hideInfo() {
-    this.setData({
-      mask: false
-    });
-  }
 })

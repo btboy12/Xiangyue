@@ -8,11 +8,4 @@
     </view>
   </i-cell>
 </i-cell-group>
-
-<view id="mask" wx:if="{{mask}}" bind:tap="hideInfo">
-  <view id="userInfo">
-    <i-avatar></i-avatar>
-    <text>用户名:{{}}</text>
-    <tag-item></tag-item>
-  </view>
-</view>
+<user-info isShow="{{mask}}"></user-info>

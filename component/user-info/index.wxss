@@ -1,0 +1,59 @@
+/* component/user-info/index.wxss */
+
+page {
+  height: 100%;
+}
+
+.mask {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  background-color: rgba(255, 255, 255, 0.9);
+  filter: blur(0);
+}
+
+.user-info {
+  position: fixed;
+  border-radius: 30rpx;
+  border: 1rpx solid #333;
+  background-color: white;
+  width: 90%;
+  left: 0;
+  right: 0;
+  top: 10%;
+  margin: auto;
+}
+
+.user-info .avatar {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.user-info .user-name {
+  margin-top: 64rpx;
+  text-align: center;
+}
+
+.user-info .descript {
+  margin: 40rpx 120rpx;
+  text-align: center;
+}
+
+.user-info .outstand {
+  color: aqua;
+}
+
+.user-info .percent{
+  margin: 40rpx 20rpx;
+  text-align: center;
+}
+
+.user-info .tags{
+  text-align: center;
+}
