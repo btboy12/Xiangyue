@@ -1,0 +1,31 @@
+.ariseActive,.createsuccess{
+  position: fixed;
+  left: 5%;
+  top:3%;
+  width: 80%;
+   height: 800rpx; 
+  background-color: white;
+  border: solid silver
+}
+
+.select{
+  width: 60%;
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.radio-group{
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+
+.alertword{
+  font-size: 40rpx;
+}
+.pickdate{
+  border: solid;
+}
+.backhistory{
+  border: solid;
+}

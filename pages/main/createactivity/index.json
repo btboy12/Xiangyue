@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "foot-nav": "../../../component/foot-nav/index",
+    "i-radio-group": "../../../iview/radio-group/index",
+    "i-radio": "../../../iview/radio/index",
+    "i-row": "../../../iview/row/index",
+    "i-col": "../../../iview/col/index",
+    "i-cell-group": "../../../iview/cell-group/index",
+    "i-cell": "../../../iview/cell/index",
+    "i-icon": "../../../iview/icon/index",
+    "i-button": "../../../iview/button/index",
+    "i-input": "../../../iview/input/index",
+    "i-panel": "../../../iview/panel/index"
+  }
+}

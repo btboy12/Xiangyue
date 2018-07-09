@@ -1,0 +1,12 @@
+text{
+  font-size: 28rpx
+}
+.usercard{
+  border: solid 1px gainsboro;
+  height: 120rpx;
+  padding-top:10rpx;
+}
+.icon{
+  margin-top:10px;
+  margin-left:10%; 
+}

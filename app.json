@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/main/main",
+    "pages/main/navpage/index",
+    "pages/main/createactivity/index",
+    "pages/main/joinactivity/index",
     "pages/history/main/index",
     "pages/history/message/index",
     "pages/history/notice/index",

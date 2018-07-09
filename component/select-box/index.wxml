@@ -1,0 +1,11 @@
+<view>
+ <i-row>
+    <i-col span="12" offset="2" i-class="col-class">{{titlest}}</i-col>
+  </i-row>
+  <i-panel title="group-activity">
+    <i-radio-group current="{{current}}" bindchange="handleActivityChange">
+      <i-radio class='colheight' wx:for="{{activity}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+      </i-radio>
+    </i-radio-group>
+  </i-panel>
+</view>

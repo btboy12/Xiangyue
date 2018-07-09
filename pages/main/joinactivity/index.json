@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "foot-nav": "../../../component/foot-nav/index",
+    "user-card":"../../../component/user-card/index"
+    }
+}
