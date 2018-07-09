@@ -3,4 +3,7 @@
   <view class="mask-content">
     <tag-item bind:click="selectTag" class="mask-item" wx:for="{{tagList}}" wx:key="*this" title="{{item}}"></tag-item>
   </view>
+  <view wx:if="{{delete}}" class="delete">
+    <i-icon bind:tap="deleteTag" type="trash" size="48" color="#D05A6E"></i-icon>
+  </view>
 </view>

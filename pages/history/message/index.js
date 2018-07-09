@@ -12,6 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.setNavigationBarTitle({
+      title: "test"
+    });
     let message = [];
     for (let i = 0; i < 50; i++) {
       message.push({
@@ -27,9 +30,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示

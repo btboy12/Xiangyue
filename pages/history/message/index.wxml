@@ -6,7 +6,10 @@
 </view>
 <view class="placehold"></view>
 <i-row i-class="typein">
-  <i-col span="18">
+  <i-col span="6">
+    <i-button type="success">取消活动</i-button>
+  </i-col>
+  <i-col span="12">
     <i-input type="text" mode="wrapped" />
   </i-col>
   <i-col span="6">

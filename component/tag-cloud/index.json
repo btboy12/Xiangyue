@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "tag-item":"/component/tag-item/index"
+    "tag-item": "/component/tag-item/index",
+    "i-icon": "/iview/icon/index"
   }
 }

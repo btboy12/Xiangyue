@@ -9,8 +9,8 @@
   <view id="title">约会结束啦!</view>
 
   <view id="tag">
-    <tag-item wx:for="{{tags}}" wx:key="*this" bind:tap="tapTag" title="{{item}}"></tag-item>
-    <tag-item wx:if="{{tags.length <3}}" bind:tap="tapTag" title="添加标签" color="#eee"></tag-item>
+    <tag-item wx:for="{{tags}}" wx:key="*this" data-index="{{index}}" bind:tap="modTag" title="{{item}}"></tag-item>
+    <tag-item wx:if="{{tags.length <3}}" bind:tap="addTag" title="添加标签" color="#eee"></tag-item>
   </view>
 
   <view id="comment">
@@ -20,4 +20,4 @@
   <view id="confirm">好了</view>
 </view>
 
-<tag-cloud bind:select="selectTag" tagList="{{tagList}}" show="{{showTagCloud}}"></tag-cloud>
+<tag-cloud bind:select="selectTag" tagList="{{tagList}}" show="{{showTagCloud}}" delete="needDelete"></tag-cloud>

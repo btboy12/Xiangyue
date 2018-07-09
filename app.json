@@ -12,5 +12,24 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "时光机",
+        "pagePath": "pages/history/main/index"
+      },
+      {
+        "text": "共享时光",
+        "pagePath": "pages/main/main"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/personal/personal"
+      }
+    ]
   }
 }

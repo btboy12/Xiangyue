@@ -15,6 +15,10 @@ Component({
           show: v
         });
       }
+    },
+    delete: {
+      type: "Bool",
+      value: false
     }
   },
 
@@ -34,6 +38,9 @@ Component({
     },
     selectTag(tag) {
       this.triggerEvent('select', tag.detail);
+    },
+    deleteTag() {
+      this.triggerEvent('select', null);
     }
   }
 })

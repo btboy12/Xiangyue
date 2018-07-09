@@ -5,9 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tagList: ["牛逼", "强", "巨牛逼", "帅得一批", "巨强", "狗逼", "弱智", "脑子可能是被猪给踢了", "聪明又伶俐", "可爱又迷人"],
+    tagList: ["积极", "热情", "率真", "幽默", "独立", "稳重", "温和", "包容", "细心", "游戏", "音乐", "影视", "二次元", "摄影", "科技", "艺术", "运动"],
     showTagCloud: false,
-    tags: []
+    tags: [],
+    needDelete: false,
+    moddingTagIndex: null
   },
 
   /**
@@ -66,15 +68,27 @@ Page({
 
   },
 
-  tapTag() {
+  addTag() {
     this.setData({
-      showTagCloud: true
+      showTagCloud: true,
+      needDelete: false,
+      moddingTagIndex: null
+    });
+  },
+  modTag(event) {
+    this.setData({
+      showTagCloud: true,
+      needDelete: true,
+      moddingTagIndex: event.target.dataset.index
     });
   },
 
   selectTag(tag) {
-    console.info(tag);
-    this.data.tags.push(tag.detail);
+    if (tag.detail) {
+      this.data.tags.push(tag.detail);
+    } else {
+      this.data.tags.splice(this.data.moddingTagIndex, 1);
+    }
     this.setData({
       tags: this.data.tags
     });
