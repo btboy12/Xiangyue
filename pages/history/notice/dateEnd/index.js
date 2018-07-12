@@ -9,7 +9,8 @@ Page({
     showTagCloud: false,
     tags: [],
     needDelete: false,
-    moddingTagIndex: null
+    moddingTagIndex: null,
+    good: false
   },
 
   /**
@@ -91,6 +92,12 @@ Page({
     }
     this.setData({
       tags: this.data.tags
+    });
+  },
+
+  tapGood() {
+    this.setData({
+      good: !this.data.good
     });
   }
 })

@@ -2,11 +2,15 @@
 <view id="container">
   <view id="avatar">
     <view>
-      <image src="http://localhost:30000/avatar.jpg"></image>
+      <image src="https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/d5/cc/ec/d5ccec4b-3f9a-0a7c-4b20-00d3b9207122/pr_source.png/246x0w.jpg"></image>
     </view>
   </view>
 
   <view id="title">约会结束啦!</view>
+  <view id="praise">
+    <i-icon type="{{good?'praise_fill':'praise'}}" size="64" color="{{good?'#DB4D6D':'#333333'}}" bind:tap="tapGood" />
+    <view>喜欢这次活动</view>
+  </view>
 
   <view id="tag">
     <tag-item wx:for="{{tags}}" wx:key="*this" data-index="{{index}}" bind:tap="modTag" title="{{item}}"></tag-item>
@@ -17,7 +21,10 @@
     <input placeholder='说点什么吧……(0/12)' placeholder-class='comment-placeholder'></input>
   </view>
 
-  <view id="confirm">好了</view>
+  <i-row>
+    <i-col span="4" offset="4" i-class="btn">好了</i-col>
+    <i-col span="4" offset="8" i-class="btn">算了</i-col>
+  </i-row>
 </view>
 
 <tag-cloud bind:select="selectTag" tagList="{{tagList}}" show="{{showTagCloud}}" delete="needDelete"></tag-cloud>

@@ -1,7 +1,10 @@
 {
   "usingComponents": {
     "i-avatar": "/iview/avatar/index",
+    "i-icon": "/iview/icon/index",
     "tag-item": "/component/tag-item/index",
-    "tag-cloud": "/component/tag-cloud/index"
+    "tag-cloud": "/component/tag-cloud/index",
+    "i-row": "/iview/row/index",
+    "i-col": "/iview/col/index"
   }
 }

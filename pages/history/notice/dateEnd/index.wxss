@@ -20,6 +20,7 @@ page {
 #avatar {
   text-align: center;
   padding: 30rpx;
+  margin-top: -120rpx;
 }
 
 #avatar>view {
@@ -36,10 +37,14 @@ page {
 }
 
 #title {
-  padding: 75rpx;
   text-align: center;
   font-size: 52rpx;
   color: #333;
+}
+
+#praise {
+  text-align: center;
+  padding: 60rpx 0;
 }
 
 #tag {
@@ -58,10 +63,8 @@ page {
   color: #333;
 }
 
-#confirm {
-  width: 60%;
-  margin: auto;
+.btn {
+  border: 1px #333 solid;
   text-align: center;
-  border: 1px solid #999;
-  font-size: 24rpx;
+  font-size: 20rpx;
 }
