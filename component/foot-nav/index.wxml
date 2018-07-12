@@ -6,10 +6,10 @@
       <navigator open-type="switchTab" url="/pages/history/main/index">时光机</navigator>
     </i-col>
     <i-col span="8" i-class="col-class">
-      <navigator open-type="switchTab" url="/pages/main/main">共享时光</navigator>
+      <navigator class="center" open-type="switchTab" url="/pages/main/navpage/index">共享时光</navigator>
     </i-col>
     <i-col span="8" i-class="col-class">
-      <navigator open-type="switchTab" url="/pages/personal/personal">我的</navigator>
+      <navigator open-type="switchTab" url="/pages/personal/main/index">我的</navigator>
     </i-col>
   </i-row>
 </view>

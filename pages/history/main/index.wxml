@@ -1,13 +1,13 @@
 <!--pages/history/main/index.wxml-->
 <view id="container">
   <view id="title">
-    <image src="http://localhost:30000/history_title.jpg"></image>
+    <image src="/utils/image/history_title.jpg" mode="aspectFill"></image>
     <view id="toolbox">
       <view>
-        <navigator url="/pages/history/message/index">
+        <view id="toMessage" bind:tap="toMessage">
           <i-icon type="message" size="45" color="#80848f" />
           <view>消息</view>
-        </navigator>
+        </view>
         <navigator url="/pages/history/notice/index">
           <i-icon type="prompt" size="45" color="#80848f" />
           <view>通知</view>
@@ -18,11 +18,16 @@
   <view id="comment">
     <view>
       <i-cell-group>
-        <i-cell wx:for="{{message}}" wx:key="*this" title="{{item}}">
-          <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="small" slot="footer"></i-avatar>
+        <i-cell wx:for="{{message}}" wx:key="*this" title="{{item.msg}}">
+          <i-avatar src="{{item.avatar}}" size="small" slot="footer"></i-avatar>
         </i-cell>
       </i-cell-group>
     </view>
   </view>
-   <foot-nav></foot-nav> 
+  <i-toast id="toast" />
+  <foot-nav></foot-nav>
 </view>
+
+<i-modal visible="{{showModal}}" actions="{{modalActions}}" bind:click="clickModal">
+  <view>XX 取消了与你的活动，不要气馁哦！快去找别的小伙伴玩耍吧。</view>
+</i-modal>

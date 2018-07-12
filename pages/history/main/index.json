@@ -4,7 +4,9 @@
     "i-cell-group": "/iview/cell-group/index",
     "i-cell": "/iview/cell/index",
     "i-avatar": "/iview/avatar/index",
-    "i-icon": "/iview/icon/index"
+    "i-icon": "/iview/icon/index",
+    "i-toast": "/iview/toast/index",
+    "i-modal":"/iview/modal/index"
   },
   "disableScroll": true
 }

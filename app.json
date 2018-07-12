@@ -7,7 +7,8 @@
     "pages/history/message/index",
     "pages/history/notice/index",
     "pages/history/notice/dateEnd/index",
-    "pages/personal/personal"
+    "pages/personal/main/index",
+    "pages/personal/authentication/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,11 +27,11 @@
       },
       {
         "text": "共享时光",
-        "pagePath": "pages/main/main"
+        "pagePath": "pages/main/navpage/index"
       },
       {
         "text": "我的",
-        "pagePath": "pages/personal/personal"
+        "pagePath": "pages/personal/main/index"
       }
     ]
   }

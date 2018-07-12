@@ -15,6 +15,10 @@ page {
   position: relative;
 }
 
+#title>image {
+  width: 100%;
+}
+
 #toolbox {
   position: absolute;
   width: 100%;
@@ -28,6 +32,12 @@ page {
   background-color: white;
   border-radius: 45rpx;
   box-shadow: 10rpx 10rpx 5rpx grey;
+}
+
+#toMessage {
+  display: inline-block;
+  text-align: center;
+  margin: 30rpx 80rpx;
 }
 
 #toolbox navigator {

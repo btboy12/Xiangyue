@@ -6,14 +6,17 @@
   bottom: 0;
 }
 
+.center {
+  border-right: solid 1px white;
+  border-left: solid 1px white;
+}
+
 .col-class {
   height: 80rpx;
   line-height: 80rpx;
   font-size: 30rpx;
   text-align: center;
   background-color: black;
-  border-right: solid 1px white;
-  border-left: solid 1px white;
   color: white;
 }
 

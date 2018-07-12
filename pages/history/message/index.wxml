@@ -7,7 +7,7 @@
 <view class="placehold"></view>
 <i-row i-class="typein">
   <i-col span="6">
-    <i-button type="success">取消活动</i-button>
+    <i-button bind:tap="cancelActivity" type="success">取消活动</i-button>
   </i-col>
   <i-col span="12">
     <i-input type="text" mode="wrapped" />
@@ -16,3 +16,7 @@
     <i-button type="success">发送</i-button>
   </i-col>
 </i-row>
+
+<i-modal visible="{{showModal}}" actions="{{modalActions}}" bind:click="clickModal">
+  <view>确定取消活动吗?这将扣除你的满意度。</view>
+</i-modal>

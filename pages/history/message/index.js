@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    message: []
+    message: [],
+    modalActions: [{
+        name: "确定",
+        loading: false
+      },
+      {
+        name: "再考虑一下"
+      }
+    ],
+    showModal: false
   },
 
   /**
@@ -72,5 +81,36 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  cancelActivity() {
+    this.setData({
+      showModal: true
+    });
+  },
+
+  clickModal({
+    detail
+  }) {
+    if (detail.index === 1) {
+      this.setData({
+        showModal: false
+      });
+    } else {
+      const action = [...this.data.modalActions];
+      action[0].loading = true;
+
+      this.setData({
+        modalActions: action
+      });
+
+      setTimeout(() => {
+        action[0].loading = false;
+        this.setData({
+          showModal: false,
+          modalActions: action
+        });
+      }, 2000);
+    }
   }
 })
