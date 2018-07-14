@@ -52,6 +52,7 @@
 
 #input {
   padding: 8.5px;
+  flex-grow: 1;
 }
 
 #input>input {
@@ -59,18 +60,4 @@
   line-height: 48px;
   font-size: 36rpx;
   background-color: #fff;
-}
-
-#send {
-  padding: 8.5px;
-}
-
-#send>view {
-  height: 48px;
-  line-height: 48px;
-  font-size: 32rpx;
-  width: 80px;
-  text-align: center;
-  border-radius: 6px;
-  background-color: #808f7c;
 }

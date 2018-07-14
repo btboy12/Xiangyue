@@ -22,9 +22,9 @@
   </view>
 
   <i-row>
-    <i-col span="4" offset="4" i-class="btn">好了</i-col>
-    <i-col span="4" offset="8" i-class="btn">算了</i-col>
+    <i-col span="4" offset="4" i-class="btn" bind:tap="confirm">好了</i-col>
+    <i-col span="4" offset="8" i-class="btn" bind:tap="cancel">算了</i-col>
   </i-row>
 </view>
 
-<tag-cloud bind:select="selectTag" tagList="{{tagList}}" show="{{showTagCloud}}" delete="needDelete"></tag-cloud>
+<tag-cloud bind:select="selectTag" excludeTags="{{tags}}" show="{{showTagCloud}}" delete="{{needDelete}}"></tag-cloud>

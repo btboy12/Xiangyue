@@ -7,5 +7,7 @@
     <choice-st activityword='参加活动' picsrc='../../utils/image/joinActi.png'></choice-st>
   </navigator>
 </view>
+<userinfo-modal title="第一次来？" visible="{{ first_time }}" bind:ok="toCharactTest" ok-text="做测评" bind:cancel="getUserInfo" cancel-text="下次吧">
+  <view>完成性格测评可以让你找到更合心意的小伙伴哦！</view>
+</userinfo-modal>
 <foot-nav></foot-nav>
-

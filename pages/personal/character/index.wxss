@@ -1,0 +1,47 @@
+/* pages/personal/character/index.wxss */
+
+page {
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.answer {
+  flex-grow: 1;
+  position: relative;
+}
+
+.answer>view {
+  position: absolute;
+  width: 280px;
+  height: 150px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.answer:first-child>view {
+  background-color: #d0104c;
+}
+
+.answer:last-child>view {
+  background-color: #86c166;
+}
+
+.question {
+  height: 100px;
+  line-height: 100px;
+  padding: 0 40px;
+  text-align: center;
+}

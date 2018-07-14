@@ -3,7 +3,7 @@
 .tag-item {
   border-radius: 18rpx;
   display: inline-block;
-  padding: 32rpx 48rpx;
+  padding: 24rpx 36rpx;
   color: #333;
   font-size: 32rpx;
   margin: 15rpx;

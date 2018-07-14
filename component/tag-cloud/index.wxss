@@ -23,15 +23,34 @@ page {
   flex-wrap: wrap;
   top: 10%;
   /* height: 60%; */
-  padding:0 10%;
+  padding: 0 10%;
 }
 
 .delete {
   position: absolute;
-  bottom: 5%;
+  bottom: 0;
   text-align: center;
-  width: 80%;
-  margin: 10%;
-  padding-top: 5%; 
-  border-top: solid 1px #999;
+  width: 100%;
+  margin: 60rpx 0;
+}
+
+.tag-option {
+  text-align: center;
+  position: relative;
+  border-radius: 30rpx;
+  margin: 15rpx 0;
+}
+
+.character {
+  background: rgba(240, 169, 134, 0.2);
+}
+
+.hobby {
+  background: rgba(128, 143, 124, 0.2);
+}
+
+.head {
+  text-align: center;
+  font-size: 22px;
+  color: #333;
 }

@@ -14,7 +14,8 @@ Page({
         name: "再考虑一下"
       }
     ],
-    showModal: false
+    showModal: false,
+    text: ""
   },
 
   /**
@@ -87,6 +88,16 @@ Page({
     this.setData({
       showModal: true
     });
+  },
+
+  send({
+    detail
+  }) {
+    console.info(detail);
+    this.setData({
+      text: ""
+    })
+    return "";
   },
 
   clickModal({

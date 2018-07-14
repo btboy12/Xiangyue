@@ -5,15 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notice: [{
-      user: "",
-      text: "xx接受了你的申请爱搜打哈搜哈山东我很大山东",
-      needConfirm: true
-    }, {
-      user: "",
-      text: "xx接受了你的申请爱搜打哈搜哈山东我很大山东",
-      needConfirm: false
-    }],
+    notice: [],
     mask: false
   },
 
@@ -21,7 +13,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let _ = this;
+    wx.request({
+      url: 'http://localhost/activity',
+      success({
+        data
+      }) {
+        _.setData({
+          notice: data.data
+        })
+      }
+    })
   },
 
   /**
@@ -78,4 +80,17 @@ Page({
       mask: true
     });
   },
+  accept() {
+    wx.request({
+      url: "http://123.207.236.41:8000/TestModel/input/",
+      data: {
+        "id": 12,
+        "name": "fuckpython"
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      method: "POST"
+    })
+  }
 })

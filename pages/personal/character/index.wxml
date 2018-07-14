@@ -1,0 +1,14 @@
+<!--pages/personal/character/index.wxml-->
+<view id="container">
+  <view class="answer">
+    <view bind:tap="select" data-result="{{test[index].A[0].result}}">{{test[index].A[0].text}}</view>
+  </view>
+  <view class="question">{{test[index].Q}}</view>
+  <view class="answer">
+    <view bind:tap="select" data-result="{{test[index].A[1].result}}">{{test[index].A[1].text}}</view>
+  </view>
+</view>
+
+<i-modal visible="{{testFinish}}" bind:ok="confirm" show-cancel="{{show_cancel}}">
+  <view>性格测试完成！</view>
+</i-modal>

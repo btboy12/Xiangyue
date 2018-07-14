@@ -1,7 +1,14 @@
 <!--component/tag-cloud/index.wxml-->
 <view wx:if="{{show}}" class="mask" bind:tap="hideMask">
   <view class="mask-content">
-    <tag-item bind:click="selectTag" class="mask-item" wx:for="{{tagList}}" wx:key="*this" title="{{item}}"></tag-item>
+    <view class="tag-option character">
+      <view class="head">性格</view>
+      <tag-item bind:click="selectTag" class="mask-item" wx:for="{{tagList.character}}" wx:key="*this" title="{{item}}"></tag-item>
+    </view>
+    <view class="tag-option hobby">
+       <view class="head">爱好</view> 
+      <tag-item bind:click="selectTag" class="mask-item" wx:for="{{tagList.hobby}}" wx:key="*this" title="{{item}}"></tag-item>
+    </view>
   </view>
   <view wx:if="{{delete}}" class="delete">
     <i-icon bind:tap="deleteTag" type="trash" size="48" color="#D05A6E"></i-icon>

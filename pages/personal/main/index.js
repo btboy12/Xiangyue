@@ -62,7 +62,13 @@ Page({
 
   },
 
-  getUserInfo(info) {
-    console.info(info);
+  navToCharacter() {
+    wx.navigateTo({
+      url: '/pages/personal/character/index'
+    });
+  },
+
+  addTag(){
+    
   }
 })

@@ -2,6 +2,7 @@
   "usingComponents": {
     "foot-nav": "/component/foot-nav/index",
     "i-button": "/iview/button/index",
-    "tag-item": "/component/tag-item/index"
+    "tag-item": "/component/tag-item/index",
+    "tag-cloud": "/component/tag-cloud/index"
   }
 }

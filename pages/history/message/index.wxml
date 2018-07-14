@@ -7,13 +7,10 @@
 <view class="placehold"></view>
 <view id="typein">
   <view id="cancel">
-    <view>取消活动</view>
+    <view ontap="cancelActivity">取消活动</view>
   </view>
   <view id="input">
-    <input></input>
-  </view>
-  <view id="send">
-    <view>发送</view>
+    <input bindconfirm="send" value="{{text}}"></input>
   </view>
 </view>
 

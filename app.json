@@ -8,7 +8,8 @@
     "pages/history/notice/index",
     "pages/history/notice/dateEnd/index",
     "pages/personal/main/index",
-    "pages/personal/authentication/index"
+    "pages/personal/authentication/index",
+    "pages/personal/character/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
