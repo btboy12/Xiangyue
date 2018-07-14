@@ -1,4 +1,6 @@
 // pages/history/message/index.js
+const app = getApp();
+let activity_info;
 Page({
 
   /**
@@ -21,67 +23,67 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    wx.setNavigationBarTitle({
-      title: "test"
-    });
-    let message = [];
-    for (let i = 0; i < 50; i++) {
-      message.push({
-        send: (Math.random() > 0.5),
-        text: "啊啊啊啊"
-      })
-    }
-    this.setData({
-      message
-    });
+  onShow(options) {
+    let _ = this;
+    wx.getStorage({
+      key: 'current-activity',
+      success: function({
+        data: {
+          info,
+          message
+        }
+      }) {
+        activity_info = info;
+        _.setData({
+          message
+        });
+
+        wx.setNavigationBarTitle({
+          title: info.content
+        });
+        wx.connectSocket({
+          url: `ws://192.168.123.1:8000`,
+          protocols: ['protocol8', 'protocol13'],
+          header: {
+            'token': app.token,
+            'to': info.application
+          },
+          success() {
+            console.info("connect success")
+          },
+          fail() {
+            console.error("connnect error")
+          }
+        });
+        wx.onSocketMessage(function({
+          data
+        }) {
+          let msg = _.data.message;
+          msg.push({
+            send: false,
+            text: data
+          });
+          _.setData({
+            message: msg
+          });
+          wx.setStorage({
+            key: 'current-activity',
+            data: {
+              info: activity_info,
+              message: msg
+            },
+          })
+        })
+      },
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
+  onHide() {
+    wx.closeSocket();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  onUnload() {
+    wx.closeSocket();
   },
 
   cancelActivity() {
@@ -93,11 +95,31 @@ Page({
   send({
     detail
   }) {
-    console.info(detail);
+    wx.sendSocketMessage({
+      data: detail.value,
+    });
+
+    let msg = this.data.message;
+    msg.push({
+      send: true,
+      text: detail.value
+    });
+
+    this.setData({
+      message: msg
+    });
+
+    wx.setStorage({
+      key: 'current-activity',
+      data: {
+        info: activity_info,
+        message: msg
+      },
+    })
+
     this.setData({
       text: ""
-    })
-    return "";
+    });
   },
 
   clickModal({
