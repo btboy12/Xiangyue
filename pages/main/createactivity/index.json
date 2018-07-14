@@ -10,6 +10,8 @@
     "i-icon": "../../../iview/icon/index",
     "i-button": "../../../iview/button/index",
     "i-input": "../../../iview/input/index",
-    "i-panel": "../../../iview/panel/index"
+    "i-panel": "../../../iview/panel/index",
+    "time-picker": "../../../component/time-picker/index"
+
   }
 }

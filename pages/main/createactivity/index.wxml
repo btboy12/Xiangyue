@@ -47,19 +47,21 @@
       <i-col span="12" offset="2" i-class="col-class" class='alerttitle'>什么时间</i-col>
     </i-row>
     <view class='pickdate'>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="{{enddate}}" bindchange="bindDateChange">
+      <!-- <picker mode="date" value="{{date}}" start="2015-09-01" end="{{enddate}}" bindchange="bindDateChange">
         <view class="picker">
           <i-cell title="{{date}}"></i-cell>
         </view>
-      </picker>
-    </view>
+      </picker> -->
+      <time-picker now="{{moment}}" pickerdata="{{pickerdata}}" daystart="{{daystart}}" hourstart="{{hourstart}}" minutestart="{{minutestart}}" monthstart="{{monthstart}}" year="{{year}}"></time-picker>
+    </view> 
   </view>
+
   <i-panel>
     <i-input value="{{ brief }}" type="text"  mode="wrapped" placeholder="说点什么吧" />
   </i-panel>
   <i-button bind:click="sendMsg" type="primary" size="small">共享时光</i-button>
   </view>
-<view class='createsuccess' wx:if="{{!created}}">
+<view class='createsuccess' wx:else>
   <i-row >
     <i-col span="20" offset="4" i-class="col-class">共享成功</i-col>
   </i-row>
@@ -67,7 +69,7 @@
     <i-col span="20" offset="4" i-class="col-class">现在去帮你寻找适合的小伙伴啦</i-col>
   </i-row>
   
-  <navigator url='../../history/main/index' class='backhistory'>
+  <navigator url='../../history/main/index' open-type='switchTab' class='backhistory'>
     <view >到时光机查看加入的申请</view>
   </navigator> 
   

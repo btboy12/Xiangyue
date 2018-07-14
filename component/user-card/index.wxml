@@ -1,20 +1,23 @@
 <view class='usercard'>
   <i-row>
     <i-col span='3' i-class='col-class'>
-      <i-avatar src="{{avatarsrc}}" size="default" class='icon'></i-avatar>
+      <i-avatar src="{{activityinfo.portrait}}" size="default" class='icon'></i-avatar>
     </i-col>
     <i-col span='19' i-class='col-class'>
       <view>
-        <text>{{activityinfo.location}} </text>
-        <text>{{activityinfo.time}} </text>
-        <text>{{activityinfo.aim}} </text>
-        <text>{{activityinfo.pay}} </text>
+        <text wx:if="{{activityinfo.location == 0}}">同校</text>
+        <text wx:else>同城</text>
+        <text>{{activityinfo.start_time}} </text>
+        <text>{{activityinfo.content}} </text>
+        <text wx:if="{{activityinfo.pay_way == 0}}">我付</text>
+        <text wx:elif="{{activityinfo.pay_way == 1}}">你付</text>
+        <text wx:else>AA</text>
       </view>
-      <view>{{activityinfo.brief}}</view>
+      <view>{{activityinfo.remark}}</view>
     </i-col>
     <i-col span='2' i-class='col-class'>
       <i-icon type="like" wx:if="{{!checked}}" bindtap='joinThisActivity'  size="30"/>
-      <i-icon type="like_fill" wx:else/>
+      <i-icon type="like_fill"  size="30" wx:else/>
     </i-col>
   </i-row>
 </view>

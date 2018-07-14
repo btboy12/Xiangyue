@@ -1,0 +1,7 @@
+ <view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{pickerdata.multiIndex}}" range="{{pickerdata.multiArray}}">  
+      <view class="picker">  
+          当前选择：{{multiArray[0][multiIndex[0]]}}年{{multiArray[1][multiIndex[1]]}}月{{multiArray[2][multiIndex[2]]}}日 {{multiArray[3][multiIndex[3]]}} ：{{multiArray[4][multiIndex[4]]}}  
+      </view>  
+    </picker>  
+</view>
