@@ -2,17 +2,17 @@
 <view id="container">
   <view id="info">
     <view id="avatar">
-      <image mode="aspectFit" src="http://img0.pconline.com.cn/pconline/1611/01/8519002_001.jpg"></image>
+      <image mode="aspectFit" src="{{portrait}}"></image>
     </view>
-    <text>安德森</text>
+    <text>{{data.name}}</text>
     <view>
-      <tag-item wx:for="{{tags}}" title="{{item}}" bind:click="modTag"></tag-item>
+      <tag-item wx:for="{{label}}" title="{{item}}" bind:click="modTag"></tag-item>
       <tag-item wx:if="" bind:click="addTag">+添加标签+</tag-item>
     </view>
   </view>
   <view>
     <i-button bind:click="navToCharacter">性格测评</i-button>
-    <i-button>身份认证</i-button>
+    <i-button bind:click="navToAuthentication">身份认证</i-button>
     <i-button>客服反馈</i-button>
     <i-button>隐私政策和服务条款</i-button>
   </view>

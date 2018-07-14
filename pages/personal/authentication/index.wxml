@@ -1,2 +1,8 @@
 <!--pages/personal/authentication/index.wxml-->
-<text>pages/personal/authentication/index.wxml</text>
+<i-input value="{{ name }}" title="姓名" />
+<i-input value="{{ school }}" title="学校" />
+<i-input value="{{ academy }}" title="学院" />
+<i-input value="{{ major }}" title="专业" />
+<i-input value="{{ student_no }}" title="学号" type="number" />
+
+<i-button bind:click="confirm" type="success">重新认证</i-button>

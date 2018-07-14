@@ -13,10 +13,7 @@ App({
           success({
             data
           }) {
-            wx.setStorage({
-              key: 'token',
-              data: data.openid,
-            })
+            this.token = data.openid;
           }
         })
       }
