@@ -1,11 +1,17 @@
 <view>
-  <view>
-    <i-col span="8" i-class="col-class" offset="16">
+  <view class='wrap'>
+    <i-col span="4" i-class="col-class" offset="20">
       <i-icon type="close" size='30' bindtap='close'/>
     </i-col>
-    <text>申请成功</text>
-    <text>现在就等他/她的答复了！</text>
-    <navigator url="../../history/main/index" open-type="switchTab" hover-class="navigator-hover">到时光机查看答复</navigator> 
+    <view class='head'>
+      <text>申请成功</text>
+    </view>
+    <view class='tail'>
+      <text>现在就等他/她的答复了！</text>
+    </view>
+    <view class='timemachine'>
+      <navigator url="../../history/main/index" open-type="switchTab" hover-class="navigator-hover">到时光机查看答复</navigator> 
+    </view>
   </view>
   <foot-nav></foot-nav>
 </view>
