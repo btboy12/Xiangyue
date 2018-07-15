@@ -1,8 +1,11 @@
 <view>
-  <view>这些人跟你可能聊得来</view>
+  <view class='headword'>>这些人跟你可能聊得来</view>
+  <view class='list'>
   <user-card wx:for="{{activities}}" activityinfo="{{item}}" bind:click='handleJoin' bind:headclick='getDetail'></user-card>
+  </view>
   <user-info isShow="{{showDetail}}"  info="{{detail_info}}"></user-info>
+  
   <!--TODO card的功能  -->
-  <view bindtap='getActivityList'>换一组</view>
+  <view class='tailword'bindtap='getActivityList'>不喜欢？换一组></view>
   <foot-nav></foot-nav>
 </view>

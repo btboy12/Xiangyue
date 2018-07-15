@@ -62,7 +62,7 @@
   </view>
 
   <i-panel>
-    <i-input value="{{remark}}" type="text"  mode="wrapped" maxlength="30" placeholder="说点什么吧.." />
+    <i-input value="{{remark}}" type="text"  mode="wrapped" maxlength="30" placeholder="说点什么吧.." bindconfirm='setRemark' />
   </i-panel>
   <view class='fbutton' bindtap='sendMsg'>
     <text>共享时光</text>
@@ -70,15 +70,19 @@
   <!-- <i-button bind:click="sendMsg" type="primary" size="small">共享时光</i-button> -->
   </view>
 <view class='createsuccess' wx:else>
-  <i-row >
-    <i-col span="20" offset="4" i-class="col-class">共享成功</i-col>
-  </i-row>
-  <i-row>
-    <i-col span="20" offset="4" i-class="col-class">现在去帮你寻找适合的小伙伴啦</i-col>
-  </i-row>
+  <view class='bigword'>
+    <i-row>
+      <i-col span="20" offset="4" i-class="col-class">共享成功</i-col>
+    </i-row>
+  </view>
+  <view class='smallword'>
+    <i-row>
+      <i-col span="20" offset="4" i-class="col-class">现在去帮你寻找适合的小伙伴啦~</i-col>
+    </i-row>
+  </view>
   
   <navigator url='../../history/main/index' open-type='switchTab' class='backhistory'>
-    <view >到时光机查看加入的申请</view>
+    <view class='navbar'>到时光机查看加入的申请</view>
   </navigator> 
 </view>
 <view class='bgplace'>
