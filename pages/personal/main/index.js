@@ -17,7 +17,7 @@ Page({
       success({
         data
       }) {
-        data.label = data.label.indexOf(";") < 0 ? [] : data.label.split(";");
+        data.label = data.label ? data.label.split(";") : [];
         _.setData(data);
       }
     })
