@@ -50,9 +50,8 @@ App({
               }
             }
 
-
             // let openid = JSON.parse(res).openid;
-            let openid = '2';
+            let openid = '1';
             _.token = openid;
             if (false) {
               wx.connectSocket({

@@ -74,6 +74,10 @@ Page({
           url: `${app.prefix}/userinfo`,
           method: "post",
           data
+        });
+        wx.setStorage({
+          key: "userInfo",
+          data
         })
       },
     })

@@ -1,6 +1,5 @@
 // component/user-info/index.js
-const gender_string = ["ta", "他", "她"];
-const gender_string2 = ["家伙", "男孩", "女孩"];
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -10,10 +9,22 @@ Component({
       type: "Bool",
       value: false,
       observer(v) {
+        let _ = this;
+        if (v) {
+          wx.request({
+            url: `${app.prefix}/userinfo`,
+            success({data}){
+
+            }
+          })
+        }
         this.setData({
           isShow: v
         });
       }
+    },
+    applicant: {
+      type: "number",
     },
     info: {
       type: "Object"
@@ -35,12 +46,6 @@ Component({
       this.setData({
         isShow: false
       });
-    },
-    genderStringify(gender) {
-      return gender_string[gender]
-    },
-    genderStringify2(gender) {
-      return gender_string2[gender]
     }
   }
 })
