@@ -3,5 +3,6 @@
     "i-input": "/iview/input/index",
     "i-button": "/iview/button/index",
     "i-message": "/iview/message/index"
-  }
+  },
+  "navigationBarTitleText": "身份认证"
 }

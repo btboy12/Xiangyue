@@ -5,5 +5,6 @@
     "i-avatar": "/iview/avatar/index",
     "i-icon": "/iview/icon/index",
     "user-info": "/component/user-info/index"
-  }
+  },
+  "navigationBarTitleText": "通知"
 }

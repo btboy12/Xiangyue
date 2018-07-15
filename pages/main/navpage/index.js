@@ -71,6 +71,9 @@ Page({
   },
   toCharactTest(event) {
     this.getUserInfo(event);
+    wx.navigateTo({
+      url: '/pages/personal/character/index',
+    })
   },
 
   // /**
@@ -150,7 +153,7 @@ Page({
           })
         }
       },
-      fail:function(){
+      fail: function() {
         wx.navigateTo({
           url: '../joinactivity/index',
         });
@@ -172,13 +175,11 @@ Page({
           })
         }
       },
-      fail: function () {
+      fail: function() {
         wx.navigateTo({
           url: '../createactivity/index',
         });
       }
     })
-
   }
-
 })

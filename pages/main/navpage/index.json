@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "享悦",
   "usingComponents": {
     "foot-nav": "../../../component/foot-nav/index",
     "choice-st": "../../../component/choice-st/index",

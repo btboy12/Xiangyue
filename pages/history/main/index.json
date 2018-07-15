@@ -7,5 +7,6 @@
     "i-icon": "/iview/icon/index",
     "i-toast": "/iview/toast/index"
   },
-  "disableScroll": true
+  "disableScroll": true,
+  "navigationBarTitleText": "时光机"
 }

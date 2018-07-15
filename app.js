@@ -141,5 +141,6 @@ App({
   cancelActivities: [],
   cancelModalLock: false,
   onReceiveMsg: null,
-  prefix: "http://123.207.236.41:8000",
+  // prefix: "http://123.207.236.41:8000",
+  prefix: "http://localhost"
 })

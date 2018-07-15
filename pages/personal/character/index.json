@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "i-modal": "/iview/modal/index"
-  }
+  },
+  "navigationBarTitleText": "性格测试"
 }

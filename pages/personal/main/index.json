@@ -4,5 +4,6 @@
     "i-button": "/iview/button/index",
     "tag-item": "/component/tag-item/index",
     "tag-cloud": "/component/tag-cloud/index"
-  }
+  },
+  "navigationBarTitleText": "个人信息"
 }
