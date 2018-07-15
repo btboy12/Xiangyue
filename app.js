@@ -10,51 +10,54 @@ App({
       }) => {
         wx.request({
           url: `${_.prefix}/login`,
-          // url: "http://123.207.236.41:8000/login",
           data: {
             code
           },
           success({
             data: {
-              openid
+              res
             }
           }) {
+            // let openid = JSON.parse(res).openid;
+            let openid = '1';
             _.token = openid;
-            wx.connectSocket({
-              url: `ws://192.168.123.1:8000?token=${openid}`,
-              protocols: ['protocol8', 'protocol13'],
-              success() {
-                wx.onSocketMessage(function(res) {
-                  let {
-                    from,
-                    text
-                  } = JSON.parse(res.data);
-                  _.onReceiveMsg && _.onReceiveMsg(text);
-                  let history_msg = [];
-                  wx.getStorage({
-                    key: `message_${from}`,
-                    success({
-                      data
-                    }) {
-                      history_msg = data
-                    },
-                    complete() {
-                      history_msg.push({
-                        send: false,
-                        text
-                      });
-                      wx.setStorage({
-                        key: `message_${from}`,
-                        data: history_msg,
-                      })
-                    }
+            if (false) {
+              wx.connectSocket({
+                url: `ws://192.168.123.1:8000?token=${openid}`,
+                protocols: ['protocol8', 'protocol13'],
+                success() {
+                  wx.onSocketMessage(function(res) {
+                    let {
+                      from,
+                      text
+                    } = JSON.parse(res.data);
+                    _.onReceiveMsg && _.onReceiveMsg(text);
+                    let history_msg = [];
+                    wx.getStorage({
+                      key: `message_${from}`,
+                      success({
+                        data
+                      }) {
+                        history_msg = data
+                      },
+                      complete() {
+                        history_msg.push({
+                          send: false,
+                          text
+                        });
+                        wx.setStorage({
+                          key: `message_${from}`,
+                          data: history_msg,
+                        })
+                      }
+                    })
                   })
-                })
-              },
-              fail() {
-                console.error("connnect error")
-              }
-            });
+                },
+                fail() {
+                  console.error("connnect error")
+                }
+              });
+            }
 
             let local_activity = [];
             wx.getStorage({
@@ -73,12 +76,14 @@ App({
                 token: openid
               },
               success({
-                data
+                data: {
+                  results
+                }
               }) {
-                remote_activity = data;
+                remote_activity = results;
                 wx.setStorage({
                   key: 'activities',
-                  data
+                  data: results
                 });
               }
             });
@@ -105,5 +110,5 @@ App({
   cancelActivities: [],
   cancelModalLock: false,
   onReceiveMsg: null,
-  prefix: "http://192.168.123.1",
+  prefix: "http://123.207.236.41:8000",
 })

@@ -2,9 +2,9 @@
 <i-cell-group>
   <i-cell wx:for="{{notice}}" title="{{item.content}}" wx:key="applicant">
     <i-avatar bind:tap="showInfo" src="{{item.portrait}}" slot="icon"></i-avatar>
-    <view wx:if="{{item.needConfirm}}" class="check" slot="footer">
-      <i-icon bindtap="accept" type="right" size="28" color="#80848f" />
-      <i-icon type="close" size="28" color="#80848f" />
+    <view wx:if="{{!item.state}}" class="check" slot="footer">
+      <i-icon bind:tap="accept" data-id="{{item.id}}" data-applicant="{{item.applicant}}" type="right" size="28" color="#80848f" />
+      <i-icon bind:tap="reject" data-id="{{item.id}}" data-applicant="{{item.applicant}}" type="close" size="28" color="#80848f" />
     </view>
   </i-cell>
 </i-cell-group>

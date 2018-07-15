@@ -8,6 +8,9 @@ Page({
   data: {
     activities: wx.getStorageSync("activities")
   },
+  onLoad(){
+    console.info(this.data.activities)
+  },
   toMessage({
     target: {
       dataset

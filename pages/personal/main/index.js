@@ -11,9 +11,9 @@ Page({
     console.info(app);
     let _ = this;
     wx.request({
-      url: 'http://localhost/userinfo',
+      url: `${app.prefix}/userinfo`,
       data: {
-        tokenid: app.token
+        token: app.token
       },
       success({
         data
@@ -62,8 +62,6 @@ Page({
     } else {
       label.splice(this.data.moddingTagIndex, 1);
     }
-
-    console.info(label);
     this.setData({
       label
     });

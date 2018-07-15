@@ -17,22 +17,15 @@ Page({
    */
   onLoad: function(options) {
     let _ = this;
-    wx.getStorage({
-      key: 'token',
+    wx.request({
+      url: `${app.prefix}/userinfo`,
+      data: {
+        token: app.token
+      },
       success({
-        data: tokenid
+        data
       }) {
-        wx.request({
-          url: `${app.prefix}/userinfo`,
-          data: {
-            tokenid
-          },
-          success({
-            data
-          }) {
-            _.setData(data)
-          }
-        })
+        _.setData(data)
       }
     })
   },
@@ -40,7 +33,7 @@ Page({
     wx.request({
       url: `${app.prefix}/userinfo`,
       method: "post",
-      data: this.data,
+      data: Object.assign(this.data, { token: app.token}),
       success() {
         $Message({
           content: '认证成功',
