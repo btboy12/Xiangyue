@@ -62,9 +62,12 @@
   </view>
 
   <i-panel>
-    <i-input value="{{remark}}" type="text"  mode="wrapped" placeholder="说点什么吧" />
+    <i-input value="{{remark}}" type="text"  mode="wrapped" maxlength="30" placeholder="说点什么吧.." />
   </i-panel>
-  <i-button bind:click="sendMsg" type="primary" size="small">共享时光</i-button>
+  <view class='fbutton' bindtap='sendMsg'>
+    <text>共享时光</text>
+  </view>
+  <!-- <i-button bind:click="sendMsg" type="primary" size="small">共享时光</i-button> -->
   </view>
 <view class='createsuccess' wx:else>
   <i-row >

@@ -59,3 +59,14 @@
 .addborder{
   background-color: rgba(248,249,248,1);
 }
+.fbutton{
+  background-color: black;
+  height: 60rpx;
+  width: 40%;
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  position: relative;
+  left:30%;
+  padding-top: 3%;
+}
