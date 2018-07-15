@@ -30,10 +30,12 @@
       <i-col span="12" offset="2" i-class="col-class" class='alerttitle'>谁给钱</i-col>
     </i-row>
     <i-col span="20" offset="4" i-class="col-class">
+    <view class='addborder'>
       <i-cell class="doword" title="{{payname}}" bindtap="togglePaySelect">
         <i-icon slot="icon" type="packup" wx:if="{{payfold}}"/>
         <i-icon type="unfold" slot="icon" wx:else />
       </i-cell>
+    </view>
     </i-col>
     <i-col span="20" offset="4" i-class="col-class">
       <radio-group class="radio-group" bindchange="radioChange" wx:if="{{payfold}}">

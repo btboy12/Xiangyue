@@ -1,9 +1,10 @@
 .picker{
   font-size: 24rpx;
-  border: solid 0.5px grey;
+   border: solid 0.3px; 
   width:240rpx; 
   border-radius: 12rpx;
   /* display: inline-block;
   position:relative;
   float: left  */
+  background-color: rgba(248,249,248,1)
 }
