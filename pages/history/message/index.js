@@ -25,8 +25,10 @@ Page({
   }) {
     wx.setNavigationBarTitle({
       title: name
-    })
-    console.info(id, name);
+    });
+    this.setData({
+      to: id
+    });
   },
 
   /**
@@ -39,16 +41,25 @@ Page({
       success: function({
         data
       }) {
-        activity_info = info;
         _.setData({
           message: data
         });
-
-        wx.setNavigationBarTitle({
-          title: info.content
-        });
       },
-    })
+    });
+
+
+    app.onReceiveMsg = (text) => {
+      let {
+        message
+      } = this.data;
+      message.push({
+        send: false,
+        text
+      })
+      this.setData({
+        message
+      })
+    }
   },
 
   onHide() {
@@ -65,7 +76,10 @@ Page({
     detail
   }) {
     wx.sendSocketMessage({
-      data: detail.value,
+      data: JSON.stringify({
+        to: this.data.to,
+        text: detail.value
+      }),
     });
 
     let msg = this.data.message;
@@ -74,20 +88,14 @@ Page({
       text: detail.value
     });
 
-    this.setData({
-      message: msg
-    });
-
     wx.setStorage({
-      key: `message`,
-      data: {
-        info: activity_info,
-        message: msg
-      },
+      key: `message_${this.data.to}`,
+      data: msg,
     })
 
     this.setData({
-      text: ""
+      text: "",
+      message: msg
     });
   },
 

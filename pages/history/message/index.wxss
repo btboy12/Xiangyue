@@ -4,22 +4,26 @@
   border-radius: 20rpx;
   padding: 20rpx;
   display: inline-block;
+  word-wrap: break-word;
+}
+
+.receive {
+  padding: 15rpx 160rpx 15rpx 20rpx;
 }
 
 .receive .chat-bubble {
   border: solid #999 1rpx;
   background-color: white;
-  margin: 15rpx 80rpx 15rpx 20rpx;
 }
 
 .send {
+  padding: 15rpx 20rpx 15rpx 160rpx;
   text-align: right;
 }
 
 .send .chat-bubble {
   border: solid #eee 1rpx;
   background-color: greenyellow;
-  margin: 15rpx 20rpx 15rpx 80rpx;
 }
 
 .placehold {
@@ -60,4 +64,5 @@
   line-height: 48px;
   font-size: 36rpx;
   background-color: #fff;
+  padding-left: 36rpx;
 }

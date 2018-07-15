@@ -2,7 +2,7 @@
 <view wx:for="{{activities}}">
   <view>{{item.id}}</view>
   <view>
-    <button bind:tap="toMessage" data-name="{{item.applicant_name}}" data-id="application">发送消息</button>
+    <button bind:tap="toMessage" data-name="{{item.applicant_name}}" data-id="{{item.application}}">发送消息</button>
   </view>
 </view>
 <view wx:if="{{activities.length===1}}">没有进行中的活动</view>

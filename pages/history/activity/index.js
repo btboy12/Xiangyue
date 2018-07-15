@@ -9,12 +9,13 @@ Page({
     activities: wx.getStorageSync("activities")
   },
   toMessage({
-    detail: {
-      data
+    target: {
+      dataset
     }
   }) {
+    console.info(dataset)
     wx.navigateTo({
-      url: `/pages/history/message/index?id=${detail.application}&name=${detail.application_name}`
+      url: `/pages/history/message/index?id=${dataset.id}&name=${dataset.name}`
     })
   }
 })

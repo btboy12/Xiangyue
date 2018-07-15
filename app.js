@@ -24,12 +24,11 @@ App({
               url: `ws://192.168.123.1:8000?token=${openid}`,
               protocols: ['protocol8', 'protocol13'],
               success() {
-                wx.onSocketMessage(function({
-                  data: {
+                wx.onSocketMessage(function(res) {
+                  let {
                     from,
                     text
-                  }
-                }) {
+                  } = JSON.parse(res.data);
                   _.onReceiveMsg && _.onReceiveMsg(text);
                   let history_msg = [];
                   wx.getStorage({
