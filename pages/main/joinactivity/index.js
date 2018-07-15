@@ -88,14 +88,14 @@ Page({
   handleChangeActivityList: function() {
     this.getActivityList();
   },
-  handleJoin: function() {
+  handleJoin: function(e) {
     let that = this;
     wx.showModal({
       title: '你确认向ta发送申请吗？',
       // content: '这是一个模态弹窗',
       success: function(res) {
         if (res.confirm) {
-          that.sendJoinRequest();
+          that.sendJoinRequest(e);
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
@@ -112,6 +112,7 @@ Page({
   //发送申请
   sendJoinRequest: function(e) {
     let that = this;
+    console.info(e);
     let id = e.detail.activity_id;
     wx.request({
       url: `${app.prefix}/activity/join`,
