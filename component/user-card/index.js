@@ -34,7 +34,7 @@ Component({
       this.setData({
         checked: true
       })
-      this.triggerEvent('click');
+      this.triggerEvent('click',{activity_id:this.data.id});
     },
     displayDetail: function(){
       this.triggerEvent('headclick', { announcer_id: this.data.announcer_id});
