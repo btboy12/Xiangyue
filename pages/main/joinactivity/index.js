@@ -129,17 +129,19 @@ Page({
   //返回detail
   getDetail: function(e) {
     let reqid = e.detail.announcer_id;
+    let that = this;
     wx.request({
-      url: '/userinfo?userid={' + reqid + '}',
+      url: `${app.prefix}/activity/current`,
       method: 'get',
       header: {
         'content-type': 'application/json' // 默认值
       },
+      data:{token : reqid},
       success: function(res) { //返回的数据
-        let detail_obj = JSON.parse(res.data) //微信会自动解析吗？？
+        let detail_obj = res.data //微信会自动解析吗？？
         if (detail_obj) {
           console.log('success_detail');
-          this.setData({
+          that.setData({
             showDetail: true,
             detail_info: detail_obj //obj
           });
