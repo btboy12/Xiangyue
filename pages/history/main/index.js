@@ -1,12 +1,11 @@
 // pages/history/main/index.js
 const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    message: [],
+    message: wx.getStorageSync("historyMessage"),
     hasMessage: false,
     modalActions: [{
         name: "知道了"
