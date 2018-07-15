@@ -1,4 +1,8 @@
 // pages/personal/authentication/index.js
+const {
+  $Message
+} = require('../../../iview/base/index');
+const app = getApp();
 Page({
 
   /**
@@ -13,22 +17,30 @@ Page({
    */
   onLoad: function(options) {
     let _ = this;
-    wx.getStorage({
-      key: 'token',
+    wx.request({
+      url: `${app.prefix}/userinfo`,
+      data: {
+        token: app.token
+      },
       success({
-        data: tokenid
+        data
       }) {
-        wx.request({
-          url: 'http://localhost/userinfo',
-          data: {
-            tokenid
-          },
-          success({
-            data
-          }) {
-            _.setData(data)
-          }
-        })
+        _.setData(data)
+      }
+    })
+  },
+  confirm() {
+    wx.request({
+      url: `${app.prefix}/userinfo`,
+      method: "post",
+      data: Object.assign(this.data, { token: app.token}),
+      success() {
+        $Message({
+          content: '认证成功',
+          type: 'success',
+          duration: 1
+        });
+        setTimeout(wx.navigateBack, 1000);
       }
     })
   }

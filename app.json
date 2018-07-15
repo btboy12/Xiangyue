@@ -10,7 +10,8 @@
     "pages/history/notice/dateEnd/index",
     "pages/personal/main/index",
     "pages/personal/authentication/index",
-    "pages/personal/character/index"
+    "pages/personal/character/index",
+    "pages/history/activity/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

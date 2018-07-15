@@ -3,15 +3,17 @@ const app = getApp();
 
 Page({
   data: {
-
+    showTagCloud: false,
+    needDelete: false,
+    moddingTagIndex: null
   },
   onLoad() {
     console.info(app);
     let _ = this;
     wx.request({
-      url: 'http://localhost/userinfo',
+      url: `${app.prefix}/userinfo`,
       data: {
-        tokenid: app.token
+        token: app.token
       },
       success({
         data
@@ -34,6 +36,34 @@ Page({
   },
 
   addTag() {
+    this.setData({
+      showTagCloud: true,
+      needDelete: false,
+      moddingTagIndex: null
+    });
+  },
 
+  modTag(event) {
+    this.setData({
+      showTagCloud: true,
+      needDelete: true,
+      moddingTagIndex: event.target.dataset.index
+    });
+  },
+
+  selectTag(tag) {
+    let label = this.data.label;
+    if (tag.detail) {
+      if (this.data.moddingTagIndex != null) {
+        label[this.data.moddingTagIndex] = tag.detail;
+      } else {
+        label.push(tag.detail);
+      }
+    } else {
+      label.splice(this.data.moddingTagIndex, 1);
+    }
+    this.setData({
+      label
+    });
   }
 })

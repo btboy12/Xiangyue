@@ -6,3 +6,4 @@
 <i-input value="{{ student_no }}" title="学号" type="number" />
 
 <i-button bind:click="confirm" type="success">重新认证</i-button>
+<i-message id="message" />

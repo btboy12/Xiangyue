@@ -6,8 +6,8 @@
     </view>
     <text>{{data.name}}</text>
     <view>
-      <tag-item wx:for="{{label}}" title="{{item}}" bind:click="modTag"></tag-item>
-      <tag-item wx:if="" bind:click="addTag">+添加标签+</tag-item>
+      <tag-item wx:for="{{label}}" title="{{item}}" data-index="{{index}}" bind:click="modTag"></tag-item>
+      <tag-item wx:if="{{label.length<3}}" bind:click="addTag" title="+添加标签+"></tag-item>
     </view>
   </view>
   <view>
@@ -19,4 +19,4 @@
   <foot-nav></foot-nav>
 </view>
 
-<tag-cloud show="{{shotTagCloud}}" delete="{{deleteTag}}" tagList="{{tagList}}"></tag-cloud>
+<tag-cloud show="{{showTagCloud}}" delete="{{needDelete}}" bind:select="selectTag" excludeTags="{{label}}"></tag-cloud>

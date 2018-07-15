@@ -1,4 +1,6 @@
 // pages/history/message/index.js
+const app = getApp();
+let activity_info;
 Page({
 
   /**
@@ -17,71 +19,51 @@ Page({
     showModal: false,
     text: ""
   },
+  onLoad({
+    id,
+    name
+  }) {
+    wx.setNavigationBarTitle({
+      title: name
+    });
+    this.setData({
+      to: id
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    wx.setNavigationBarTitle({
-      title: "test"
+  onShow(options) {
+    let _ = this;
+    wx.getStorage({
+      key: `message_${this.data.to}`,
+      success: function({
+        data
+      }) {
+        _.setData({
+          message: data
+        });
+      },
     });
-    let message = [];
-    for (let i = 0; i < 50; i++) {
+
+
+    app.onReceiveMsg = (text) => {
+      let {
+        message
+      } = this.data;
       message.push({
-        send: (Math.random() > 0.5),
-        text: "啊啊啊啊"
+        send: false,
+        text
+      })
+      this.setData({
+        message
       })
     }
-    this.setData({
-      message
-    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  onHide() {
+    app.onReceiveMsg = null;
   },
 
   cancelActivity() {
@@ -93,11 +75,28 @@ Page({
   send({
     detail
   }) {
-    console.info(detail);
-    this.setData({
-      text: ""
+    wx.sendSocketMessage({
+      data: JSON.stringify({
+        to: this.data.to,
+        text: detail.value
+      }),
+    });
+
+    let msg = this.data.message;
+    msg.push({
+      send: true,
+      text: detail.value
+    });
+
+    wx.setStorage({
+      key: `message_${this.data.to}`,
+      data: msg,
     })
-    return "";
+
+    this.setData({
+      text: "",
+      message: msg
+    });
   },
 
   clickModal({
