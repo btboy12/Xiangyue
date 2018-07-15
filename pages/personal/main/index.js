@@ -8,7 +8,6 @@ Page({
     moddingTagIndex: null
   },
   onLoad() {
-    console.info(app);
     let _ = this;
     wx.request({
       url: `${app.prefix}/userinfo`,
@@ -18,7 +17,7 @@ Page({
       success({
         data
       }) {
-        data.label = data.label.split(";");
+        data.label = data.label.indexOf(";") < 0 ? [] : data.label.split(";");
         _.setData(data);
       }
     })
@@ -65,5 +64,18 @@ Page({
     this.setData({
       label
     });
+    wx.getStorage({
+      key: 'userInfo',
+      success: function({
+        data
+      }) {
+        data.label = label.join(";");
+        wx.request({
+          url: `${app.prefix}/userinfo`,
+          method: "post",
+          data
+        })
+      },
+    })
   }
 })

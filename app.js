@@ -1,5 +1,16 @@
 //app.js
 wx.hideTabBar();
+
+function compare(superarray, subarray, key) {
+  let result = [];
+  for (let item of superarray) {
+    if (!subarray.find(v => v[key] === item[key])) {
+      result.push(item);
+    }
+  }
+  return result;
+}
+
 App({
   onShow() {
     let _ = this;
@@ -18,8 +29,30 @@ App({
               res
             }
           }) {
+            let local_activity = [];
+            let remote_activity = [];
+
+            function complete() {
+              let diff_activity = compare(local_activity, remote_activity, "id");
+              if (diff_activity.length) {
+                for (let activity of diff_activity) {
+                  wx.request({
+                    url: `${app.prefix}/activity/cancel`,
+                    success(data) {
+                      if (data) {
+                        _.cancelActivities.push(activity)
+                      } else {
+                        app.endActivity = activity;
+                      }
+                    }
+                  })
+                }
+              }
+            }
+
+
             // let openid = JSON.parse(res).openid;
-            let openid = '1';
+            let openid = '2';
             _.token = openid;
             if (false) {
               wx.connectSocket({
@@ -59,7 +92,7 @@ App({
               });
             }
 
-            let local_activity = [];
+            let process_count = 2;
             wx.getStorage({
               key: 'activities',
               success({
@@ -69,7 +102,6 @@ App({
               }
             });
 
-            let remote_activity = [];
             wx.request({
               url: `${_.prefix}/activity/current`,
               data: {
@@ -96,7 +128,7 @@ App({
     wx.closeSocket();
   },
   showCancelModal() {
-    if (!this.cancelModalLock && this.cancelModalLock.length) {
+    if (!this.cancelModalLock && this.cancelActivities.length) {
       let info;
       [info, ...this.cancelActivities] = this.cancelActivities;
       wx.showModal({

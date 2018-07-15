@@ -2,20 +2,20 @@
 <view class="mask" wx:if="{{isShow}}" bind:tap="hideInfo">
   <view class="user-info">
     <view class="avatar-wrapper">
-      <i-avatar i-class="avatar" size="large"></i-avatar>
+      <i-avatar src="{{info.portrait}}" i-class="avatar" size="large"></i-avatar>
     </view>
     <view class="user-name">
       <text>用户名:{{info.name}}</text>
     </view>
-    <view class="descript">
+    <!-- <view class="descript">
       这是一个
       <text class="outstand" wx:for="{{info.nature}}">{{item}}，</text>的
-      <text>{{info.sex?"男":"女"}}孩</text>
+      <text>{{genderStringify2(info.gender)}}</text>
       <text class="outstand" wx:for="{{info.hobby}}">，爱{{item}}</text>。
-    </view>
+    </view> -->
     <view class="percent">
       <text class="outstand">{{info.percent}}%</text>的人喜欢和
-      <text>{{info.sex?"他":"她"}}</text>一起的时光
+      <text>{{genderStringify(info.gender)}}</text>一起的时光
     </view>
     <view></view>
     <view class="tags">

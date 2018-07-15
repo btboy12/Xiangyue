@@ -1,4 +1,6 @@
 // component/user-info/index.js
+const gender_string = ["ta", "他", "她"];
+const gender_string2 = ["家伙", "男孩", "女孩"];
 Component({
   /**
    * 组件的属性列表
@@ -14,13 +16,7 @@ Component({
       }
     },
     info: {
-      type: "Object",
-      value: {
-        name: "家里蹲大学",
-        sex: false,
-        nature: ["外向", "爱聊天", "感性"],
-        hobby: ["音乐", "运动"]
-      }
+      type: "Object"
     }
   },
 
@@ -39,6 +35,12 @@ Component({
       this.setData({
         isShow: false
       });
+    },
+    genderStringify(gender) {
+      return gender_string[gender]
+    },
+    genderStringify2(gender) {
+      return gender_string2[gender]
     }
   }
 })

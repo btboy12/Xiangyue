@@ -1,5 +1,6 @@
 // pages/main/main.js
-let utils = require('../../../utils/util.js')
+let utils = require('../../../utils/util.js');
+const app = getApp();
 Page({
 
   /**
@@ -7,7 +8,7 @@ Page({
    */
   data: {
     first_time: false,
-    innerWidth:'600rpx',
+    innerWidth: '600rpx',
     innerHeight: '800rpx'
   },
   /**
@@ -27,26 +28,49 @@ Page({
       }
     });
     this.getwidheight();
-
   },
 
   getUserInfo({
     detail
   }) {
-    this.setData({
-      first_time: false
-    });
-    wx.setStorage({
-      key: 'userInfo',
-      data: detail.userInfo,
-    });
-  },
-  toCharactTest({
-    detail
-  }) {
-    this.setData({
-      first_time: false
+    let _ = this;
+    wx.getLocation({
+      success({
+        latitude,
+        longitude
+      }) {
+        let data = {
+          name: detail.userInfo.nickName,
+          student_no: 0,
+          school: '',
+          academy: '',
+          major: '',
+          label: '',
+          character: 0,
+          gender: detail.userInfo.gender,
+          geo_location: `${latitude},${longitude}`,
+          portrait: detail.userInfo.avatarUrl,
+          token: app.token
+        }
+
+        wx.request({
+          url: `${app.prefix}/userinfo`,
+          method: "post",
+          data
+        })
+
+        _.setData({
+          first_time: false
+        });
+        wx.setStorage({
+          key: 'userInfo',
+          data
+        });
+      }
     })
+  },
+  toCharactTest(event) {
+    this.getUserInfo(event);
   },
 
   // /**
@@ -97,49 +121,47 @@ Page({
   // onShareAppMessage: function () {
 
   // },
-  getwidheight:function (){
+  getwidheight: function() {
     let _this = this
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         console.log(res);
         // 可使用窗口宽度、高度
         console.log('height=' + res.windowHeight);
         console.log('width=' + res.windowWidth);
         _this.setData({
-          innerWidth: res.windowHeight+'rpx',
+          innerWidth: res.windowHeight + 'rpx',
           innerHeight: res.windowWidth + 'rpx'
         })
       }
     })
   },
-  nav_join:function(){
+  nav_join: function() {
     wx.getStorage({
       key: 'activities',
-      success: function (res) {
-        if(res.data.length === 0){
+      success: function(res) {
+        if (res.data.length === 0) {
           wx.navigateTo({
             url: '../joinactivity/index',
           })
-        }
-        else{
+        } else {
           wx.showToast({
             title: '你已经参加活动啦',
           })
-        } 
+        }
       }
     })
-   
+
   },
-  nav_create: function () {
+  nav_create: function() {
     wx.getStorage({
       key: 'activities',
-      success: function (res) {
+      success: function(res) {
         if (res.data.length === 0) {
           wx.navigateTo({
             url: '../createactivity/index',
           })
-        }
-        else {
+        } else {
           wx.showToast({
             title: '你已经参加活动啦',
           })

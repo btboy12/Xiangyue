@@ -1,16 +1,5 @@
 // pages/history/main/index.js
 const app = getApp();
-
-function compare(superarray, subarray, key) {
-  let result = [];
-  for (let item of superarray) {
-    if (!subarray.find(v => v[key] === item[key])) {
-      result.push(item);
-    }
-  }
-  return result;
-}
-
 Page({
 
   /**

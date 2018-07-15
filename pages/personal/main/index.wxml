@@ -4,7 +4,7 @@
     <view id="avatar">
       <image mode="aspectFit" src="{{portrait}}"></image>
     </view>
-    <text>{{data.name}}</text>
+    <text>{{name}}</text>
     <view>
       <tag-item wx:for="{{label}}" title="{{item}}" data-index="{{index}}" bind:click="modTag"></tag-item>
       <tag-item wx:if="{{label.length<3}}" bind:click="addTag" title="+添加标签+"></tag-item>
