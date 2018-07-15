@@ -158,6 +158,7 @@ Page({
             let err = Stat.errorInfo
             wx.showToast({
               title: err,
+              icon: 'none',
               duration: 200
             })
 
@@ -241,12 +242,14 @@ Page({
       else{
         wx.showToast({
           title: '活动时间输入不对',
+          icon:'none'
         })
       }
     } 
     else{
       wx.showToast({
         title: '输入不可为空',
+        icon: 'none'
       })
       return false;
     }
@@ -301,6 +304,11 @@ Page({
     });
     //console.log('ftime' + firstdate);
     return firstdate.join('-') + ' ' + lastdate.join(':');
+  },
+  setRemark:function(e){
+    this.setData({
+      remark:e.detail.value
+    })
   }
 
 
