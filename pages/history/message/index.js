@@ -19,6 +19,15 @@ Page({
     showModal: false,
     text: ""
   },
+  onLoad({
+    id,
+    name
+  }) {
+    wx.setNavigationBarTitle({
+      title: name
+    })
+    console.info(id, name);
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -26,64 +35,24 @@ Page({
   onShow(options) {
     let _ = this;
     wx.getStorage({
-      key: 'current-activity',
+      key: `message_${this.data.to}`,
       success: function({
-        data: {
-          info,
-          message
-        }
+        data
       }) {
         activity_info = info;
         _.setData({
-          message
+          message: data
         });
 
         wx.setNavigationBarTitle({
           title: info.content
         });
-        wx.connectSocket({
-          url: `ws://192.168.123.1:8000`,
-          protocols: ['protocol8', 'protocol13'],
-          header: {
-            'token': app.token,
-            'to': info.application
-          },
-          success() {
-            console.info("connect success")
-          },
-          fail() {
-            console.error("connnect error")
-          }
-        });
-        wx.onSocketMessage(function({
-          data
-        }) {
-          let msg = _.data.message;
-          msg.push({
-            send: false,
-            text: data
-          });
-          _.setData({
-            message: msg
-          });
-          wx.setStorage({
-            key: 'current-activity',
-            data: {
-              info: activity_info,
-              message: msg
-            },
-          })
-        })
       },
     })
   },
 
   onHide() {
-    wx.closeSocket();
-  },
-
-  onUnload() {
-    wx.closeSocket();
+    app.onReceiveMsg = null;
   },
 
   cancelActivity() {
@@ -110,7 +79,7 @@ Page({
     });
 
     wx.setStorage({
-      key: 'current-activity',
+      key: `message`,
       data: {
         info: activity_info,
         message: msg

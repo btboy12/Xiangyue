@@ -6,7 +6,7 @@
       <view>
         <view id="toMessage" bind:tap="toMessage">
           <i-icon type="message" size="45" color="#80848f" />
-          <view>消息</view>
+          <view>进行中</view>
         </view>
         <navigator url="/pages/history/notice/index">
           <i-icon type="prompt" size="45" color="#80848f" />
@@ -27,7 +27,3 @@
   <i-toast id="toast" />
   <foot-nav></foot-nav>
 </view>
-
-<i-modal visible="{{showModal}}" actions="{{modalActions}}" bind:click="clickModal">
-  <view>XX 取消了与你的活动，不要气馁哦！快去找别的小伙伴玩耍吧。</view>
-</i-modal>
