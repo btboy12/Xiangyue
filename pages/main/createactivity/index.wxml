@@ -4,25 +4,29 @@
     <i-row>
       <i-col span="12" offset="2" i-class="col-class">想做什么</i-col>
     </i-row>
-    <i-col span="20" offset="4" i-class="col-class">
-      <i-cell class="doword" title="{{typename}}" bindtap="toggleTypeSelect">
-        <i-icon slot="icon" type="packup" wx:if="{{fold}}"/>
-        <i-icon type="unfold" slot="icon" wx:else />
-      </i-cell>
-    </i-col>
-    <i-col span="20" offset="4" i-class="col-class">
-      <radio-group class="radio-group" bindchange="radioChange" wx:if="{{fold}}">
-        <i-col span="12" offset="2" i-class="col-class">
-          <label class="radio" wx:for="{{items}}">
-              <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
-          </label>
-        </i-col>
-      </radio-group>
-    </i-col>  
+    <view class='type'>
+      <i-col span="20" offset="4" i-class="col-class">
+        <i-cell class="doword" title="{{typename}}" bindtap="toggleTypeSelect">
+          <i-icon slot="icon" type="packup" wx:if="{{fold}}"/>
+          <i-icon type="unfold" slot="icon" wx:else />
+        </i-cell>
+      </i-col>
+      <i-col span="20" offset="4" i-class="col-class">
+        <radio-group class="radio-group" bindchange="radioChange" wx:if="{{fold}}">
+          <i-col span="12" offset="2" i-class="col-class">
+           <view class='setwidth'>
+              <label class="radio" wx:for="{{items}}">
+                  <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+              </label>
+            </view>
+          </i-col>
+        </radio-group>
+      </i-col>
+    </view>  
   </view>
   <!--付钱  -->
   <view class='select'>
-      <i-row>
+    <i-row>
       <i-col span="12" offset="2" i-class="col-class" class='alerttitle'>谁给钱</i-col>
     </i-row>
     <i-col span="20" offset="4" i-class="col-class">
@@ -34,30 +38,29 @@
     <i-col span="20" offset="4" i-class="col-class">
       <radio-group class="radio-group" bindchange="radioChange" wx:if="{{payfold}}">
         <i-col span="12" offset="2" i-class="col-class">
-          <label class="radio" wx:for="{{payitems}}">
-              <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
-          </label>
+          <view class='setwidth'>
+            <label class="radio" wx:for="{{payitems}}">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+            </label>
+          </view>
         </i-col>
       </radio-group>
     </i-col>  
   </view>
   <!--时间选择  -->
-  <view class='select'>
+  <view class='select time'>
       <i-row>
       <i-col span="12" offset="2" i-class="col-class" class='alerttitle'>什么时间</i-col>
     </i-row>
     <view class='pickdate'>
-      <!-- <picker mode="date" value="{{date}}" start="2015-09-01" end="{{enddate}}" bindchange="bindDateChange">
-        <view class="picker">
-          <i-cell title="{{date}}"></i-cell>
-        </view>
-      </picker> -->
-      <time-picker now="{{moment}}" pickerdata="{{pickerdata}}" daystart="{{daystart}}" hourstart="{{hourstart}}" minutestart="{{minutestart}}" monthstart="{{monthstart}}" year="{{year}}"></time-picker>
-    </view> 
+      <time-picker now="{{moment}}" pickerdata="{{pickerdata}}" datestart="{{datestart}}" bind:confirmDate='getStartDate'></time-picker>
+      <text> 到 </text>
+      <time-picker now="{{moment}}" pickerdata="{{pickerEnddata}}" datestart="{{datestart}}" bind:confirmDate='getEndDate'></time-picker>
+     </view>
   </view>
 
   <i-panel>
-    <i-input value="{{ brief }}" type="text"  mode="wrapped" placeholder="说点什么吧" />
+    <i-input value="{{remark}}" type="text"  mode="wrapped" placeholder="说点什么吧" />
   </i-panel>
   <i-button bind:click="sendMsg" type="primary" size="small">共享时光</i-button>
   </view>
@@ -72,5 +75,8 @@
   <navigator url='../../history/main/index' open-type='switchTab' class='backhistory'>
     <view >到时光机查看加入的申请</view>
   </navigator> 
-  
 </view>
+<view class='bgplace'>
+  <!-- <image src='../../../utils/image/bg.png' mode='scaleToFill'></image> -->
+</view>
+<foot-nav></foot-nav>

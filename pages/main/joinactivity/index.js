@@ -8,6 +8,7 @@ Page({
       pay_way: 0,// 0—我；1—对方；2—AA
       remark: '一起玩吧啊啊啊啊啊啊啊啊啊啊啊',//简介不超15字
       id:'',//活动id
+      announcer_id:'',//发起者id
       portrait: 'https://i.loli.net/2017/08/21/599a521472424.jpg' //头像地址
     }, {
       location: 0,
@@ -16,23 +17,26 @@ Page({
       pay_way: 'AA',
       remark: '一起玩吧啊啊啊啊啊啊啊啊',
       id: '',
+      announcer_id:'',
       portrait: ''
     }],
     //avatarsrc:'',
     join:false,
     //userId :''//用户id
+    showDetail:false,
+    detail_info:''//obj
   },
   //获取活动列表
   getActivityList: function (){
     //不提供userid怎么处理
    // userid = getUserId() === -1 ? 0 : getUserId();
     wx.request({
-      url: '/displayActivity',
+      url: '/displayActivity/?'+'userid={'+app.token+'}',
       method:'get',
       header: {
         'content-type': 'application/json' // 默认值
       },
-      data: app.token,
+      // data: app.token,
       success:function(res){
         if(res.data){
           this.setData({
@@ -95,9 +99,9 @@ Page({
   sendJoinRequest:function(){
     let that = this;
     wx.request({
-      url: '/joinActivity',
+      url: '/joinActivity? '+'userid={'+app.token+'}',
       method: 'get',
-      data: app.token,
+      //data: {userid :app.token},
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -120,6 +124,31 @@ Page({
         })
       }
     })
+  },
+  //返回detail
+  getDetail:function(e){
+    let reqid = e.detail.announcer_id;
+    wx.request({
+      url: '/userinfo?userid={'+reqid+'}',
+      method: 'get',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {//返回的数据
+        let detail_obj = JSON.parse(res.data)//微信会自动解析吗？？
+        if (detail_obj) {
+          console.log('success_detail');
+          this.setData({
+            showDetail: true,
+            detail_info: detail_obj//obj
+          });
+        }
+      }
+        
+    })
+
   }
+
+
  
 })

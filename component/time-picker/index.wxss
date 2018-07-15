@@ -1,0 +1,9 @@
+.picker{
+  font-size: 24rpx;
+  border: solid 0.5px grey;
+  width:240rpx; 
+  border-radius: 12rpx;
+  /* display: inline-block;
+  position:relative;
+  float: left  */
+}

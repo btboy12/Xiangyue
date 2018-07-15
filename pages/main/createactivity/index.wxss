@@ -3,15 +3,19 @@
   left: 5%;
   top:3%;
   width: 80%;
-   height: 800rpx; 
+  /*  height: 800rpx;  */
   background-color: white;
-  border: solid silver
+  padding:30rpx;
+  border-radius:10px;
+  /* font-size: 46rpx; */
 }
 
 .select{
-  width: 60%;
+  /* width: 70%; */
   overflow: hidden;
-  font-size: 30rpx;
+  font-size: 28rpx;
+  padding-bottom: 32rpx;
+
 }
 .radio-group{
   display: flex;
@@ -23,9 +27,31 @@
 .alertword{
   font-size: 40rpx;
 }
-.pickdate{
-  border: solid;
-}
+ .pickdate{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left:20rpx;
+  margin-top: 20rpx; 
+} 
 .backhistory{
   border: solid;
+}
+.bgplace{
+  position: fixed;
+  top: 0;
+  width: 800rpx;
+  height: 1600rpx;
+  background-color:rgba(25,52,80,0.8);
+  z-index: -1; 
+}
+.select.time{
+   padding:0;
+}
+/* .type{
+  border: solid
+} */
+.setwidth{
+  display: flex;
+  flex-direction: column;
 }

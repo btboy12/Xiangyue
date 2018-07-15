@@ -9,6 +9,7 @@ Component({
         pay_way: '',// 0—我；1—对方；2—AA
         remark: '一起玩吧啊啊啊啊啊啊啊啊啊啊啊',//简介不超15字
         id: '',//活动id
+        announcer_id:'',//发起者id
         portrait: ''//头像地址
       },
       observer: function (newVal) {
@@ -34,6 +35,9 @@ Component({
         checked: true
       })
       this.triggerEvent('click');
+    },
+    displayDetail: function(){
+      this.triggerEvent('headclick', { announcer_id: this.data.announcer_id});
     }
 
   }

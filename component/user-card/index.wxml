@@ -1,7 +1,7 @@
 <view class='usercard'>
   <i-row>
     <i-col span='3' i-class='col-class'>
-      <i-avatar src="{{activityinfo.portrait}}" size="default" class='icon'></i-avatar>
+      <i-avatar src="{{activityinfo.portrait}}" size="default" class='icon'bindtap='displayDetail'></i-avatar>
     </i-col>
     <i-col span='19' i-class='col-class'>
       <view>

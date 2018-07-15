@@ -1,1 +1,14 @@
 /* pages/main/main.wxss */
+.join,.create{
+  height:600rpx;
+  width:800rpx;
+  overflow: hidden;
+  
+}
+image{
+  height:600rpx;
+  width:800rpx;
+}
+.comtain{
+  background-color: white;
+}

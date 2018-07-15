@@ -1,7 +1,7 @@
 <view>
   <view>这些人跟你可能聊得来</view>
-  <user-card wx:for="{{activities}}" activityinfo="{{item}}" bind:click='handleJoin'></user-card>
+  <user-card wx:for="{{activities}}" activityinfo="{{item}}" bind:click='handleJoin' bind:headclick='getDetail'></user-card>
+  <user-info isShow="{{showDetail}}"  info="{{detail_info}}"></user-info>
   <!--TODO card的功能  -->
-  <foot-nav></foot-nav>
   <foot-nav></foot-nav>
 </view>
