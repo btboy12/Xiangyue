@@ -13,9 +13,10 @@ Page({
       { name: '看电影', value: '看电影' },
     ],
     payitems: [
-      { name: '我包', value: '我包' },
+      { name: '霸气的我掏', value: '霸气的我掏' },
       { name: 'AA', value: 'AA' },
       { name: '对方掏', value: '对方掏' },
+      { name: '无', value: '无' }
     ],
     fold:false,
     typename:'请选择',
@@ -92,7 +93,7 @@ Page({
   radioChange: function (e) {
     let name = e.detail.value;
     //console.log(name);
-    let pay = ['我包','对方掏','AA'];
+    let pay = ['霸气的我掏','对方掏','AA','无'];
     if(pay.indexOf(name) === -1){
       this.setData({
         typename: name,
@@ -115,39 +116,48 @@ Page({
   //sendMsg,发送创建请求
   sendMsg: function(){
     if (this.checkSendData()){
-      let paykind = ['我包', '对方掏', 'AA'];
+      let paykind = ['霸气的我掏', '对方掏', 'AA','无'];
       let paysend = paykind.indexOf(this.data.payname);
       let stimesend = this.parseDate(this.data.start_time);
       let etimesend = this.parseDate(this.data.end_time);
       let sendData = {
-        content: this.data.typename,
-        pay_way: paysend,
-        start_time: stimesend + ':00',
-        end_time: etimesend + ':00',
-        remark : this.data.remark,
-        announcer_id: app.token
+        "pay_way": this.data.payname,
+        "start_time": stimesend + ':00',
+        "end_time": etimesend + ':00',
+       // 'announcer_id': app.token+'',
+        "content": this.data.typename,
+        'remark ': this.data.remark,
+        // "pay_way": '对方掏',
+        // "start_time": '12312',
+        // "end_time": '534534',
+         'announcer_id': '6',
+        // "content": 'fdsfs',
+        // 'remark': 'ouewi',
       };
       console.log(sendData);
      
      // haven't use
+      let _this = this;
       wx.request({
-        url: '/sendCreateMsg',//发送请求
+        url: `${app.prefix}/activity/create`,//发送请求
         method:'post',
-        data:sendData,
+        data: sendData,
         header: {
           'content-type': 'application/json' // 默认值
         },
         success: function (res) {//返回的数据
-          let Stat = JSON.parse(res.data)//微信会自动解析？？
-          if (Stat.createStat == 1){
-            console.log('success1');
-            this.setData({
+          let Stat = res.data//微信会自动解析？？
+          console.dir(Stat);
+          if (Stat.createStat && Stat.createStat == 1){
+            console.log('Stat');
+            _this.setData({
               created: false
             });
           }
           else{
+            let err = Stat.errorInfo
             wx.showToast({
-              title: '申请失败',
+              title: err,
               duration: 200
             })
 
@@ -162,9 +172,9 @@ Page({
     //     duration: 2000
     //   })
     // }
-    this.setData({
-      created: false
-    });
+    // this.setData({
+    //   created: false
+    // });
   },
   //获取当前的年，和可以选择的月,天数在30天内,初始化起始的天数小时分完成初始化
   _parseNow: function () {
