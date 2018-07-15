@@ -3,5 +3,6 @@
   <user-card wx:for="{{activities}}" activityinfo="{{item}}" bind:click='handleJoin' bind:headclick='getDetail'></user-card>
   <user-info isShow="{{showDetail}}"  info="{{detail_info}}"></user-info>
   <!--TODO card的功能  -->
+  <view bindtap='getActivityList'>换一组</view>
   <foot-nav></foot-nav>
 </view>

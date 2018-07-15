@@ -149,6 +149,11 @@ Page({
             title: '你已经参加活动啦',
           })
         }
+      },
+      fail:function(){
+        wx.navigateTo({
+          url: '../joinactivity/index',
+        });
       }
     })
 
@@ -166,6 +171,11 @@ Page({
             title: '你已经参加活动啦',
           })
         }
+      },
+      fail: function () {
+        wx.navigateTo({
+          url: '../createactivity/index',
+        });
       }
     })
 

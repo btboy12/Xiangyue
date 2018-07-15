@@ -32,7 +32,7 @@
   flex-direction: row;
   width: 100%;
   padding-left:20rpx;
-  margin-top: 20rpx; 
+  margin-top: 20rpx;
 } 
 .backhistory{
   border: solid;
@@ -42,7 +42,7 @@
   top: 0;
   width: 800rpx;
   height: 1600rpx;
-  background-color:rgba(25,52,80,0.8);
+  background-color:#eee;
   z-index: -1; 
 }
 .select.time{
@@ -54,4 +54,19 @@
 .setwidth{
   display: flex;
   flex-direction: column;
+  /* border: solid */
+}
+.addborder{
+  background-color: rgba(248,249,248,1);
+}
+.fbutton{
+  background-color: black;
+  height: 60rpx;
+  width: 40%;
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  position: relative;
+  left:30%;
+  padding-top: 3%;
 }
