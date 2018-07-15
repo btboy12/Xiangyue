@@ -42,7 +42,7 @@ Page({
       },
       data: {
         'token': app.token+'',
-        'page_no': that.data.pagenum
+         'page_no': that.data.pagenum
       },
       success: (res) => {
         if (res.data.result_list) {
@@ -52,6 +52,7 @@ Page({
         } else { //没有活动列表
           wx.showToast({
             title: '暂时没有活动',
+            icon:'none'
           })
         }
         that.setData({
@@ -61,6 +62,7 @@ Page({
       fail: function() {
         wx.showToast({
           title: '返回列表出错',
+          icon:'none'
         })
       }
     });
@@ -104,6 +106,7 @@ Page({
   handleError: function() {
     wx.showToast({
       title: '申请失败',
+      icon:'none'
     })
   },
   //发送申请
